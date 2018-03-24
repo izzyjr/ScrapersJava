@@ -38,7 +38,7 @@ public class ScrapeData {
         List<WebElement> dates = driver.findElements(By.cssSelector("span.entry-date"));
         System.out.println(" =============== Denvycom Articles on Research ================= ");
         for (int j = 0; j < titles.size(); j++) {
-            System.out.println( dates.get(j).getText() + "\t - " + titles.get(j).getText() ) ;
+            System.out.println( dates.get(j).getText() + " - " + titles.get(j).getText() ) ;
         }
 
         //Close the browser
