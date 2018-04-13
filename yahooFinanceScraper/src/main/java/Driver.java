@@ -13,14 +13,20 @@ public class Driver {
 
         WebDriver driver = new ChromeDriver();
 
-        driver.get("https://finance.yahoo.com/cryptocurrencies?count=150");
+        driver.get("https://finance.yahoo.com/cryptocurrencies?count=120");
 
         System.out.println(driver.getTitle());
 
-        List<WebElement> symbol = driver.findElements(By.xpath("//*[@id=\"scr-res-table\"]/table/tbody/tr[*]/td[2]/a"));
+//        List<WebElement> symbol = driver.findElements(By.xpath("//*[@id=\"scr-res-table\"]/table/tbody/tr[*]/td[2]/a"));
+//
+//        for (int i = 0; i < symbol.size(); i++) {
+//            System.out.println(i + ": " + symbol.get(i).getText());
+//        }
+        String xpath = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]";
+        List<WebElement> tableRows = driver.findElements(By.xpath(xpath));
 
-        for (int i = 0; i < symbol.size(); i++) {
-            System.out.println(symbol.get(i).getText());
+        for (int i = 0; i < 112; i++) {
+            System.out.println((i + 1) + ": " + tableRows.get(i).getText());
         }
 
         driver.quit();
