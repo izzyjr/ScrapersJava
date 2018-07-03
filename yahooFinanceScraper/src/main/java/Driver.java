@@ -25,9 +25,11 @@ public class Driver {
         String xpath = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]";
         List<WebElement> tableRows = driver.findElements(By.xpath(xpath));
 
-        for (int i = 0; i < 112; i++) {
-            System.out.println((i + 1) + ": " + tableRows.get(i).getText());
-        }
+//        for (int i = 0; i < 112; i++) {
+//            System.out.println((i + 1) + ": " + tableRows.get(i).getText());
+//        }
+
+        System.out.println("27: " + tableRows.get(27).getText());
 
         driver.quit();
     }
