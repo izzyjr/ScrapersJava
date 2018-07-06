@@ -17,32 +17,30 @@ public class Driver {
 
         System.out.println(driver.getTitle());
 
+        //Row
+
+        String xpathRow = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]";
+
+        List<WebElement> tableRows = driver.findElements(By.xpath(xpathRow));
+
+        //Symbol
+
         String xpathSymbol = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]/td[1]/a";
 
         List<WebElement> symbol = driver.findElements(By.xpath(xpathSymbol));
 
-        int size = symbol.size();
+        //Name
 
+        String xpathName = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]/td[2]";
+
+        List<WebElement> name = driver.findElements(By.xpath(xpathName));
+
+        int size = name.size();
         System.out.println(size);
 
         for (int i = 0; i < 112; i++) {
-            System.out.println((i + 1) + ": " + symbol.get(i).getText());
+            System.out.println((i + 1) + ": " + name.get(i).getText());
         }
-
-//        for (int i = 0; i < 112; i++) {
-//            System.out.println((i + 1) + ": " + symbol.get(i).getText());
-//        }
-
-
-
-//        String xpath = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]";
-//        List<WebElement> tableRows = driver.findElements(By.xpath(xpath));
-//
-//        for (int i = 0; i < 112; i++) {
-//            System.out.println((i + 1) + ": " + tableRows.get(i).getText());
-//        }
-
-
 
         driver.quit();
     }
