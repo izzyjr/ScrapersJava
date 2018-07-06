@@ -25,7 +25,7 @@ public class Driver {
 
         //Symbol
 
-        String xpathSymbol = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]/td[1]/a";
+        String xpathSymbol = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]/td[1]";
 
         List<WebElement> symbol = driver.findElements(By.xpath(xpathSymbol));
 
@@ -35,11 +35,41 @@ public class Driver {
 
         List<WebElement> name = driver.findElements(By.xpath(xpathName));
 
-        int size = name.size();
+        //Price
+
+        String xpathPrice = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]/td[3]";
+
+        List<WebElement> price = driver.findElements(By.xpath(xpathPrice));
+
+        //Percent Change
+
+        String xpathPercentChange = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]/td[5]";
+
+        List<WebElement> percentChange = driver.findElements(By.xpath(xpathPercentChange));
+
+        //Market Cap
+
+        String xpathMarketCap = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]/td[6]";
+
+        List <WebElement> marketCap = driver.findElements(By.xpath(xpathMarketCap));
+
+        //Volume in Currency(24hr)
+
+        String xpathVolumeCurrency = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]/td[8]";
+
+        List <WebElement> volumeCurrency = driver.findElements(By.xpath(xpathVolumeCurrency));
+
+        //Circulating Supply
+
+        String xpathCirculatingSupply = "//*[@id=\"scr-res-table\"]/table/tbody/tr[*]/td[10]";
+
+        List<WebElement> circulatingSupply = driver.findElements(By.xpath(xpathCirculatingSupply));
+
+        int size = symbol.size();
         System.out.println(size);
 
-        for (int i = 0; i < 112; i++) {
-            System.out.println((i + 1) + ": " + name.get(i).getText());
+        for (int i = 0; i < size; i++) {
+            System.out.println((i + 1) + ": " + symbol.get(i).getText());
         }
 
         driver.quit();
