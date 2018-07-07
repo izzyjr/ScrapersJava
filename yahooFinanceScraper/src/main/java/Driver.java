@@ -69,7 +69,13 @@ public class Driver {
         System.out.println(size);
 
         for (int i = 0; i < size; i++) {
-            System.out.println((i + 1) + ": " + symbol.get(i).getText());
+            System.out.println((i + 1) + ": " + symbol.get(i).getText() +
+                                          " - " + name.get(i).getText() +
+                                          " - " + price.get(i).getText() +
+                                          " - (" + percentChange.get(i).getText() + ")" +
+                                          " - " + marketCap.get(i).getText() +
+                                          " - " + volumeCurrency.get(i).getText() +
+                                          " - " + circulatingSupply.get(i).getText() + "\n");
         }
 
         driver.quit();
